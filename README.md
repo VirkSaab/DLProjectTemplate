@@ -1,4 +1,4 @@
-# DLProjectTemplate
+# Deep Learning Project Template
 
 ### If Python 3.8 is not installed on your system. Replace 3.x to your desired Python 3 version. Make sure you also change the Python version in `Makefile` as well to use `make make_venv` command.
 ```bash
