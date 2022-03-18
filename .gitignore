@@ -3,6 +3,10 @@ data/*
 logs/*
 venv
 
+# Keep some folders
+!data/.gitkeep
+!logs/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
