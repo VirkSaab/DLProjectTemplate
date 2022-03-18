@@ -1,12 +1,12 @@
 import click
 from pyfiglet import Figlet
-from dlp import PROJ_DIR, ROOT_DIR
+from dlp import CNF_PATH, PROJ_DIR, ROOT_DIR
 from dlp.utils import load_yaml
 
 # Load project info
 CONTEXT_SETTINGS = dict(auto_envvar_prefix="COMPLEX")
 # Load Config file
-CNF = load_yaml(ROOT_DIR/"configs/default.yaml")
+CNF = load_yaml(CNF_PATH)
 
 
 # ----------------------------------------> CLI ::
