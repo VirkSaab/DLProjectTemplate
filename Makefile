@@ -59,9 +59,6 @@ ifneq ($(wildcard ./docs/.*),)
 else
 	@echo "Creating sphinx docs..."
 	sphinx-quickstart docs
-	# sphinx-build -b html docs/source docs/build/html
-	# sphinx-apidoc -o docs/source ${PROJ_NAME}
-	# make -C docs html
 endif
 
 

@@ -1,6 +1,6 @@
 # DLProjectTemplate
 
-## If Python 3.8 is not installed on your system. Replace 3.x to your desired Python 3 version. Make sure you also change the Python version in `Makefile` as well to use `make make_venv` command.
+### If Python 3.8 is not installed on your system. Replace 3.x to your desired Python 3 version. Make sure you also change the Python version in `Makefile` as well to use `make make_venv` command.
 ```bash
 apt update
 apt install software-properties-common
@@ -25,6 +25,10 @@ make run_flask
 * create docs:
     ```bash
         sphinx-quickstart docs
+    ```
+    or
+    ```bash
+    make make_docs
     ```
 * say yes to this: `> Separate source and build directories (y/n) [n]: y`
 * Add these to `docs/source/conf.py` for Google style documentation. See example [here](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html).
