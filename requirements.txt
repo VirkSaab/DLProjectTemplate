@@ -4,3 +4,5 @@ click
 rich
 pyfiglet
 pytest
+sphinx
+furo

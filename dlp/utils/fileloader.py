@@ -74,7 +74,9 @@ def load_yaml(path: Union[str, Path], pure: bool = False) -> dict:
         `dict` object containing configuration parameters.
     Example:
         .. code-block:: python
-            config = load_yaml("../config.yaml")
+
+            from dlp import CNF_PATH
+            config = load_yaml(CNF_PATH)
             print(config["project_name"])
     """
 
