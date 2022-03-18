@@ -17,17 +17,25 @@ def cli(ctx):
     if ctx.invoked_subcommand is None:
         # * BANNER
         # Find more fonts here: http://www.figlet.org/examples.html
-        f = Figlet(font="fourtops")
+        f = Figlet(font="slant")
         click.echo()
         banner = ' '.join(CNF.project_name.upper())
         # banner = f"..._ {banner} _..."
         click.secho(f"{f.renderText(banner)}", fg="yellow")
         print(
-            """Medical Visual Question Answering and Generation (MVQAG) CLI
-    Type `[yellow]mvqag --help[/yellow]` for usage details
+            f"""Welcome to {CNF.project_name.upper()} CLI
+    Type `[yellow]{CNF.project_name.lower()} --help[/yellow]` for usage details
     """
         )
         print(ctx.get_help())
 
     else:
         click.secho(f"\n[@ {ctx.invoked_subcommand}] begin:", fg="cyan")
+
+
+# ----------------------------------------> TESTS ::
+@cli.command()
+def run_tests():
+    """Run code tests"""
+    import subprocess
+    subprocess.run(['pytest', f'{CNF.paths.tests_dir}'])
