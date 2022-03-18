@@ -1,0 +1,13 @@
+seed: 1234
+n_workers: 4
+project_name: DLP
+
+#* FULL PATHS TO FOLDERS AND FILES
+paths:
+  # Main folders in project tree
+  proj_dir: &proj_dir !projdir # Path to this project root directory
+  data_dir: &data_dir !joinpath [*proj_dir, data] # Data parent folder
+  logs_dir: !joinpath [*proj_dir, logs] # Logging files folder
+  tests_dir: !joinpath [*proj_dir, tests]
+  chkpts_dir: !joinpath [*proj_dir, checkpoints] # model checkpoints folder
+  notebooks_dir: !joinpath [*proj_dir, notebooks] # notebooks folder
