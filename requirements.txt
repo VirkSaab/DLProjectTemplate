@@ -5,4 +5,4 @@ rich
 pyfiglet
 pytest
 sphinx
-furo
+flask

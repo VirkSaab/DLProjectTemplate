@@ -1,6 +1,6 @@
 # DLProjectTemplate
 
-### If Python 3.8 is not installed on your system. Replace 3.x to your desired Python 3 version. Make sure you also change the Python version in `Makefile` as well to use `make make_venv` command.
+## If Python 3.8 is not installed on your system. Replace 3.x to your desired Python 3 version. Make sure you also change the Python version in `Makefile` as well to use `make make_venv` command.
 ```bash
 apt update
 apt install software-properties-common
@@ -8,12 +8,17 @@ add-apt-repository ppa:deadsnakes/ppa
 apt update
 apt install python3.8 python3.8-venv python3.8-dev
 ```
-### Create a virtual environment
+## Create a virtual environment
 ```bash
 make make_venv
 ```
 ```bash
 source venv/bin/activate
+```
+
+## Run Flask server
+```bash
+make run_flask
 ```
 
 ## Project Documentation using Sphinx:
