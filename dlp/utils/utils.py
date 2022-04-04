@@ -1,13 +1,15 @@
 import os
+import time
 import subprocess
 from pathlib import Path
-from typing import Union
+from typing import Union, Callable, Any
 
 __all__ = [
     # Functions
     'manage_log_files', 'get_recent_githash',
 
-    # Classes
+    # Decorators
+    'show_exec_time',
 
 ]
 
@@ -58,3 +60,44 @@ def manage_log_files(logs_dir: Union[str, Path],
 
 
 # ============================= CLASSES ==============================
+
+
+# ============================== DECORATORS ==============================
+def show_exec_time(func: Callable) -> Any:
+    """Display the execution time of a function.
+
+        This decorator is suited to large programs that takes
+            more than a second to run.
+
+        Example:
+
+            .. code-block:: python
+
+                @show_exec_time
+                def take_a_break(timeout=10):
+                    time.sleep(timeout)
+
+                >>> take_a_break()
+                >>> >> Completed in 00h:00m:10s <<
+    """
+    def wrapper(*args, **kwargs):
+        start_time = time.time()
+
+        # Run the given function
+        results = func(*args, **kwargs)
+
+        end_time = time.time()
+
+        hrs = (end_time - start_time) // 3600
+        rem = (end_time - start_time) % 3600
+        mins = rem // 60
+        secs = rem % 60
+
+        hrs = str(round(hrs)).zfill(2)
+        mins = str(round(mins)).zfill(2)
+        secs = str(round(secs)).zfill(2)
+
+        print(f"\n>> Completed in {hrs}h:{mins}m:{secs}s <<\n")
+
+        return results
+    return wrapper
