@@ -65,3 +65,14 @@ make run_flask
         make html
     ```
 * Some sources for errors in sphinx - [sphinx-docs](https://www.sphinx-doc.org/en/master/tutorial/index.html), [fix 1](https://stackoverflow.com/questions/13516404/sphinx-error-unknown-directive-type-automodule-or-autoclass).
+
+
+## Where you need to rename?
+1. source code folder name `dlp` to `<your project>`
+2. `setup.py` imports
+3. `<your project>/app.py` imports
+4. `<your project>/main.py` imports
+5. `<your project>/fileloader.py` imports
+6. `tests/test_config.py` imports
+7. `<your project>/configs/default.yaml` > project_name
+8. `Makefile` > PROJ_NAME
